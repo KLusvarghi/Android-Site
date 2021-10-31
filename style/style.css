@@ -1,0 +1,215 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+@font-face {
+    font-family: 'Android';
+    src: url('../fonts/idroid.otf') format('opentype');
+    font-weight: normal;
+}
+
+:root{ /*Tudo o que eu colocar aqui dentro vai servir para o documento todo*/
+ --cor0: #c5ebd6;
+ --cor1: #83e1ad;
+ --cor2: #3ddc84;
+ --cor3: #2fa886;
+ --cor4: #1a5c37;
+ --cor5: #063d1e;
+
+--font-padrao: Arial, Verdana, Helvetica, sans-serif;
+--font-destaque: 'Bebas Neue', 'cursive';
+--font-android: 'Android', 'cursive';
+
+ /*Todas variáveis em CSS começam com   "  --  "    */
+}
+
+*{ /*Seletor globla, tudo que estiver dentro dele irá se aplicar a tudo e todos, sem exessão, sobrepondo tudo*/
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-color: var(--cor0);
+    font-family: var(--font-padrao);
+}
+
+a.externo::after{ /*Quer dizer: depois de todos links que tiverem a class "externo, ele irá inserir o que estiver dentro deste escopo*/ /*são palavras que definem estado de elementos dentro da HTML, (antes/ depois, mais nunca no momento)*/
+    content: '\00A0\1F517'; /*content é usada com os pseudoelementos ::before e ::after para gerar conteúdo em um elemento. Objetos inseridos usando a propriedade content são elementos substituídos anônimos.*/
+}
+
+
+
+header{
+    background-image: linear-gradient(to bottom, var(--cor3), var(--cor5)); /*Colocando um degrade de cima para baixo no header*/
+    min-height: 150px;
+    text-align: center;
+    /* margin-top: 40px; Se eu fier assim, ile irá vazar para fora da caixa, deixando um espaço feio entre o topo e a caixa */
+    padding-top: 40px;
+    
+}
+
+header > h1{
+    color: white;
+    font-family: var(--font-destaque);
+    font-size: 3em;
+    font-weight: normal; /*Para tirar o negito natual que as fotes h1-h6 tem*/
+    margin-bottom: 20px; /*Para ter um espaço do parágrafo*/
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.268); /*Sombra na letra*/
+}
+
+header > p{
+    font-family: var(--font-padrao);
+    font-size: 1.2em; /*Aumentenado o tamanho do parágrafo*/
+    color: white;
+    max-width: 500px; /*para que ele fique maior, porem quando fizer isso, ele acaba virando um bloco*/
+    margin: auto; /*Por ter vidrado um bloco, tem que colocar dnv margin auto nele*/
+    padding-right: 10px; /*para não ficar colado na lateral da pagina ao se adpitar*/
+    padding-left: 10px; /*para não ficar colado na lateral da pagina ao se adpitar*/
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.315); /*Sombra na letra*/
+    margin-bottom: 20px;
+}
+
+nav{
+    background-color: var(--cor5);
+    padding: 10px;
+    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.349);
+}
+
+nav > a{
+    color: var(--cor1);
+    padding: 10px; /*dando uma distancia entre as letras e baixo/cima*/
+    text-decoration: none; /*tirando o sublinhado de baixo*/
+    font-weight: bold;/* Deixando a fonte em negrito*/
+    border-radius: 5px; /*Só será visto quando estiver com o mouse encima dele*/
+    transition-duration: .5s; /*quando o mouse passar por cima ele irá DEMORAR    .5 segundos para fazer sua alteração de FORMA*/
+}
+
+nav > a:hover{
+    background-color: var(--cor3); /* mudando a cor de fundo quando o mouse estiver por cima*/
+    color: var(--cor5); /*mudando a cor da letra quando o mouse estiver por cima*/
+}
+
+main{
+    min-width: 300px;
+    max-width: 1000px;
+    background-color: white;
+    margin: auto;
+    margin-bottom: 30px; /*Para não deixar o conteudo principal colado com o rodapé*/
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.356); /*leve sombra na caixa do main*/
+    /* border-radius: 0px 0px 10px 10px; */
+    border-bottom-left-radius: 10px; 
+    border-bottom-right-radius: 10px;
+}
+
+main h1{
+    color: var(--cor5);
+    font-family: var(--font-android);
+    font-weight: normal; /*Para tirar o negito natual que as fotes h1-h6 tem*/
+    font-size: 1.8em;
+}
+
+main h2{
+    font-family: var(--font-android);
+    color: var(--cor4);
+    font-size: 1.3em;
+    background-image: linear-gradient(to right, var(--cor1), transparent);
+    text-indent: 10px; /*É o Espaço no começo da linha*/
+    font-weight: normal; /*Para tirar o negito natual que as fotes h1-h6 tem*/
+}
+
+main p{ /*Não dápra colocar "main > p" porque dentro de main tem article's e o inside, então conlocando apenas "main p" irá servir para dodos os p que estão dentro de main e quaisquer outras tags*/
+    margin: 15px 0px; /*para dar uma margem de todos os parágrafos, para que não fique colado com outros conteúdos*/
+    text-align: justify;
+    text-indent: 30px; /*Será os parágrafos no começo de cada linhas*/
+    font-size: 1em; /*aumentando o tamanho da LETRA*/
+    line-height: 2em; /*É o espaçamento entre uma linha e outra*/
+}
+
+main strong{
+    color: var(--cor4);
+    font-weight: bold;
+}
+
+main a{
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--cor5);
+    background-color: var(--cor1);
+    padding: 2px 6px;
+}
+
+main a:hover{
+    text-decoration: underline;
+    color: var(--cor4);
+    
+}
+
+main img{
+    width: 100%;
+}
+
+main img.pequena{
+    /* width: 50px; Por não ter gerado a imagem grande e pequena, apenas diminuimos o tamanho dela pela metade, ficando bom em quaisquer tamanhos de tela */
+    max-width: 350px; /*Dando uma largurá maxima para que quando a tela fiqe pequena, a iamgem não fique muito grande. mas o mais importante é para que quando a tela fique grande e a imagem crença, a imagem não perca sua qualidade ficando embaçada*/
+    display: block; /*Para centralizar imagens, tem que dar um display para ela pq ela NÃO É UM BLOCO, e em seguida centralizar ela com o MARGIN*/
+    margin: auto;
+}
+
+div.video{
+    background-color: var(--cor5);
+    margin: 0px -20px 30px -20px; /*Para deixar colado no MAIN (colar nas laterais)*/
+    padding: 20px;
+    padding-bottom: 56.6%; /*Arrumar ele para que não fique com barras preta no video*/
+    position: relative; /*Posição RELATIVA*/
+}
+
+div.video > iframe{
+    position: absolute; /*Posição ABSOLUTA, conseguindo mexer com TOP, LEFT, WIDTH e o HIGHT*/
+    top: 5%; /*ENCIMA*/
+    left: 5%; /*DIREITA*/
+    width: 90%;
+    height: 90%;
+
+}
+
+aside{
+    background-color: var(--cor1);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.267);
+}
+
+aside > h3{
+    background-color: var(--cor4);
+    color: white;
+    padding: 10px; /*aumentando a expecura da caixa*/
+    margin: -10px -10px 0px -10px; /*Para ficar COLADO com a extremidade da CAIXA*/ /*MARGIN NEGATIVA*/
+    border-radius: 10px 10px 0px 0px;
+}
+
+aside > ul{
+    list-style-position: inside; /*para colocar as bolinhas da lista tudo dentra da CAIXA*/
+    columns: 2; /*Dividir a COLUNA em quantos quiser*/
+    list-style-type: '\2714 \00A0\00A0'; /*para colocar EMOJIS no lugar da bolinha na LISTA. Não sendo compativel com todos os navegadores*/
+    /*\00A0 para cada código desse, é um espaço que será colocado entro o emoji e as letras*/
+}
+
+footer{
+    background-color: var(--cor5);
+    color: white;
+    text-align: center;
+    font-size: 0.8;
+    padding: 5px;
+}
+
+footer > p > a{
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+footer > p > a:hover{
+    text-decoration: underline;
+    color: var(--cor1);
+}
